@@ -1,14 +1,18 @@
-# HazeWatchBot
+# HazeWatchTelegramBot
 
-The Telegram bot for [Haze Watch](http://hazewatchapp.com)
+[Telegram](http://telegram.me) bot for [Haze Watch](http://hazewatchapp.com)
 
 You can start using it at https://telegram.me/myhazewatchbot
 
-Created by [@ivan-loh](https://github.com/ivan-loh).
+Created by [Ivan Loh](https://github.com/ivan-loh).
 
-Feel free to branch this repository and submit a pull request.
+Feel free to create a branch/fork from this repository. 
 
-You can also open an issue ticket to submit feedback and suggestions.
+Submit a pull request to merge in your changes.
+
+You can also [open an issue ticket](https://github.com/HazeWatchApp/HazeWatchTelegramBot/issues) to submit feedback and suggestions.
+
+## Usage
 
 ### Commands
 
