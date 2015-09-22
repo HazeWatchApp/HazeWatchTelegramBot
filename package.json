@@ -1,0 +1,17 @@
+{
+  "name": "myhazewatchbot",
+  "version": "1.0.0",
+  "description": "bragging rights",
+  "main": "app.js",
+  "dependencies": {
+    "lodash": "^3.10.1",
+    "node-telegram-bot-api": "^0.12.1",
+    "request": "^2.63.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
