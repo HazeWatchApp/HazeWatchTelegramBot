@@ -17,6 +17,8 @@ You can also [open an issue ticket](https://github.com/HazeWatchApp/HazeWatchTel
 ### Commands
 
 ```
+/negeri - list of states
+/areas <State> list of area in a state
 /api <Area>
 ```
 
