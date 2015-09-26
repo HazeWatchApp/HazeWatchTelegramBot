@@ -13,6 +13,10 @@ function nextHour() {
 
 module.exports = function fetch(msg, next) {
 
+  if (typeof msg === 'function') {
+    next = msg;
+  }
+
   console.log('fetching');
 
   if (!data || data.expiry < Date.now()) {
