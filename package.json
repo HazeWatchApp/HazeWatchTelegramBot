@@ -4,8 +4,10 @@
   "description": "bragging rights",
   "main": "app.js",
   "dependencies": {
+    "async": "^1.4.2",
     "lodash": "^3.10.1",
     "node-telegram-bot-api": "^0.12.1",
+    "redis": "^2.0.1",
     "request": "^2.63.0"
   },
   "devDependencies": {},
