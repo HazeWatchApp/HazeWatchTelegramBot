@@ -34,15 +34,25 @@ module.exports = function fetch(msg, next) {
         return next(new Error('no data'));
       }
 
-      data = {
-        result: JSON.parse(body),
-        expiry: nextHour()
-      };
+      data = { result: JSON.parse(body),
+               expiry: nextHour()         };
 
-      next(null, msg, data.result);
+      if (typeof msg === 'function') {
+        next(null, data.result);
+      } else {
+        next(null, msg, data.result);
+      }
+
     });
+
   } else {
-    next(null, msg, data.result);
+
+    if (typeof msg === 'function') {
+      next(null, data.result);
+    } else {
+      next(null, msg, data.result);
+    }
+
   }
 
 };
