@@ -11,6 +11,8 @@ const negeri   = require('./commands/negeri')(bot);
 const areas    = require('./commands/areas')(bot);
 const api      = require('./commands/api')(bot);
 const location = require('./commands/location')(bot);
+const sub      = require('./commands/subscribe')(bot);
+const unsub    = require('./commands/unsubscribe')(bot);
 
 
 bot.on('text', function (msg) {
@@ -18,10 +20,12 @@ bot.on('text', function (msg) {
   console.log(msg);
   const text = msg.text;
 
-  if (text.indexOf('/help')   === 0) { return help(null, msg);    }
-  if (text.indexOf('/negeri') === 0) { return fetch(msg, negeri); }
-  if (text.indexOf('/areas')  === 0) { return fetch(msg, areas);  }
-  if (text.indexOf('/api')    === 0) { return fetch(msg, api);    }
+  if (text.indexOf('/help')        === 0) { return help(null, msg);    }
+  if (text.indexOf('/negeri')      === 0) { return fetch(msg, negeri); }
+  if (text.indexOf('/areas')       === 0) { return fetch(msg, areas);  }
+  if (text.indexOf('/api')         === 0) { return fetch(msg, api);    }
+  if (text.indexOf('/subscribe')   === 0) { return sub(msg);           }
+  if (text.indexOf('/unsubscribe') === 0) { return unsub(msg);         }
 
   if (text.indexOf('/start')  === 0) {
     bot.sendMessage(msg.chat.id, ' Send us your location or just /help for more commands');
