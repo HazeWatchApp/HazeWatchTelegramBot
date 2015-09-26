@@ -17,9 +17,11 @@ You can also [open an issue ticket](https://github.com/HazeWatchApp/HazeWatchTel
 ### Commands
 
 ```
-/negeri - list of states
-/areas <State> list of area in a state
-/api <Area>
+/negeri                        - list out each AREA in states we covered
+/areas <state/negeri>          - list out the areas in the states
+/api <area>                    - get the latest api reading
+/subscribe <area> <threshold>  - get hourly updates where the api pass the threshold
+/unsubscribe                   - remove all your subscriptions
 ```
 
 ### Supported areas
