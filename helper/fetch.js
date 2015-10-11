@@ -3,8 +3,7 @@
 const request  = require('request');
 const endPoint = 'http://data.hazewatchapp.com/index.json';
 
-var data;
-
+let data;
 
 function nextHour() {
   const now = new Date();
@@ -17,8 +16,6 @@ module.exports = function fetch(msg, next) {
     next = msg;
   }
 
-  console.log('fetching');
-
   if (!data || data.expiry < Date.now()) {
 
     request(endPoint, function (err, res, body) {
@@ -27,22 +24,20 @@ module.exports = function fetch(msg, next) {
         return next(err);
       }
 
-      console.log('fetched');
-
-      let result = JSON.parse(body);
-      if (!result) {
+      let doc = JSON.parse(body);
+      if (!doc) {
         return next(new Error('no data'));
       }
 
-      data = { result: JSON.parse(body),
-               expiry: nextHour()         };
+      doc  = doc.result || doc;
+      data = { result: doc,
+               expiry: nextHour() };
 
       if (typeof msg === 'function') {
-        next(null, data.result);
+        return next(null, data.result);
       } else {
-        next(null, msg, data.result);
+        return next(null, msg, data.result);
       }
-
     });
 
   } else {
